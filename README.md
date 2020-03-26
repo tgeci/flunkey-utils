@@ -7,6 +7,8 @@ The implementation is separated in two parts: Model training and Face Recognitio
 
 The script will take the file name, split it in variables and publish it via **flunkey-api** as a user object with an initial config and the generated **face_encoding** as an attribute in the database. The face_encoding give us the opportunity to compare each other and on match to determine which face in front of the camera.
 
+For debugging and as a break in protection the face detection service will take 8 Sek video and save it to /tmp if the face is unknown. In future releases it will do it only if the **MONITORING_DEVICE** is not online and the face is unknown.  
+
 ### Dependencies
 All software dependencies are defined in `debian.packages` and `python.packages`. Please install them with apt-get and pip3 and be patient. The dlib will need on a Pi4 about 20-30 Minutes. 
 

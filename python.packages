@@ -1,0 +1,4 @@
+picamera[array]
+dlib
+face_recognition
+watchdog

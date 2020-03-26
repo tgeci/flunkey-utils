@@ -1,0 +1,9 @@
+# /etc/systemd/system/flunkey-face-model.timer
+[Unit]
+Description=Flunkey Face Model timer
+
+[Timer]
+OnCalendar=00/2:30
+
+[Install]
+WantedBy=basic.target

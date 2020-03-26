@@ -1,0 +1,13 @@
+# /etc/systemd/system/flunkey-task-manager.service
+[Unit]
+Description=Flunkey Background Task Manager
+After=syslog.target network.target
+[Service]
+Type=simple
+Environment=FLASK_CONFIG=production
+WorkingDirectory=/home/pi/flunkey/flunkey-api
+User=pi
+ExecStart=/home/pi/.local/bin/celery -A celery_worker.celery flower
+Restart=on-abort
+[Install]
+WantedBy=multi-user.target

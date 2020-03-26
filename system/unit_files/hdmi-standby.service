@@ -1,0 +1,13 @@
+# /etc/systemd/system/hdmi-standby.service
+# /etc/systemd/system/rotation.service
+[Unit]
+Description=HDMI Standby
+After=syslog.target network.target
+
+[Service]
+Type=oneshot
+User=root
+ExecStart=/home/pi/flunkey/flunkey-utils/scripts/flunkey-standby.sh
+
+[Install]
+WantedBy=multi-user.target

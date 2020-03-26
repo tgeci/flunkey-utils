@@ -1,0 +1,11 @@
+# /etc/systemd/system/flunkey-face-model.service
+[Unit]
+Description=Flunkey Face Model Generator Service
+After=syslog.target network.target flunkey-api.service
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/flunkey/flunkey-utils/face-recognition/
+ExecStart=/usr/bin/python3 /home/pi/flunkey/flunkey-utils/face-recognition/flunkey-face-model.py
+[Install]
+WantedBy=multi-user.target

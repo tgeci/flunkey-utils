@@ -1,0 +1,6 @@
+*.json
+*.out
+face-recognition/known_people/*.jpg
+*.jpg
+*.png
+mqtt

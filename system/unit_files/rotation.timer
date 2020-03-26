@@ -1,0 +1,9 @@
+# /etc/systemd/system/rotation.timer
+[Unit]
+Description=rotation timer
+
+[Timer]
+OnStartupSec=20
+
+[Install]
+WantedBy=basic.target

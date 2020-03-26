@@ -1,0 +1,14 @@
+# /etc/systemd/system/flunkey-api.service
+# /etc/systemd/system/face-recognition.service
+[Unit]
+Description=Flunkey Api Service
+After=syslog.target network.target
+[Service]
+Type=simple
+Environment=FLASK_ENV=production
+WorkingDirectory=/home/pi/flunkey/flunkey-api
+User=pi
+ExecStart=/usr/bin/python3 /home/pi/flunkey/flunkey-api/run.py
+Restart=on-abort
+[Install]
+WantedBy=multi-user.target

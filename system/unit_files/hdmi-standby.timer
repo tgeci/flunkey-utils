@@ -1,0 +1,11 @@
+# /etc/systemd/system/hdmi-standby.timer
+# /etc/systemd/system/hdmi-standby.timer
+[Unit]
+Description=HDMI Standby Timer
+
+[Timer]
+OnBootSec=3min
+OnCalendar=*:0/15
+
+[Install]
+WantedBy=basic.target

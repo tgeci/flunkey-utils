@@ -1,0 +1,11 @@
+# /etc/systemd/system/rotation.service
+[Unit]
+Description=Rotate Display
+After=syslog.target network.target
+
+[Service]
+Type=oneshot
+User=pi
+ExecStart=/home/pi/flunkey/flunkey-utils/scripts/rotate_dp_pi4.sh
+[Install]
+WantedBy=multi-user.target

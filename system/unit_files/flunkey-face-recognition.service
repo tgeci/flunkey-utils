@@ -1,0 +1,12 @@
+# /etc/systemd/system/flunkey-face-recognition.service
+[Unit]
+Description=Flunkey Face Recognition Service
+After=syslog.target network.target flunkey-api.service
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/flunkey/flunkey-utils/face-recognition/
+ExecStart=/usr/bin/python3 /home/pi/flunkey/flunkey-utils/face-recognition/flunkey-face-recognition.py
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
